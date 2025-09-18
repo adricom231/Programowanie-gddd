@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ile bedzie kosztować weselisko?</h2>
+    <label>Podaj liczbe gości: <input id="iloscGosci" type="number"/><br></label>
+    <label><input id="poprawiny" type="checkbox"> Poprawiny?</label><br>
+    <button type="button" onclick="obliczKoszt()">Oblicz koszt </button><br>
+    <p id="wynik"></p>
+    
+
+    <script>
+        function obliczKoszt(){
+            const iloscGosci = document.getElementById('iloscGosci').value ;
+            const wynik = document.getElementById('wynik');
+            const poprawiny = document.getElementById('poprawiny');
+            let koszt = iloscGosci * 100
+            if(poprawiny.checked){
+                wynik.innerHTML = "Koszt twojego wesela to " + koszt * 1.3 + " zł"
+
+            }else{
+                wynik.innerHTML = "Koszt twojego wesela to " + koszt + " zł"
+            }
+
+
+
+        }
+
+
+    </script>
+
+    <!-- <script src="skrypt.js"></script> -->
+    <!-- <script>
+        let a = prompt("Podaj pierwsza liczbe");
+        let b = prompt("Podaj drugą liczbe");
+        let number1 = parseFloat(a);
+        let number2 = parseFloat(b);
+        let sum = number1 + number2;
+        alert("Suma to: " + sum);
+        console.log("Suma to: " + sum);
+
+    </script> -->
+    <!-- Zrób skrypt by sprawdzić kolejność zadań 2+2*2 -->
+
+</body>
+</html>
