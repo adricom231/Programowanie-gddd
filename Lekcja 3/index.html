@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadania z pętlą</title>
+</head>
+<body>
+    <section>
+        <h3>Zad 1</h3>
+        <h4>Czy liczba jest parzysta</h4>
+        <input type="number" id="input1" placeholder="Wpisz liczbe">
+        <button id="b1">Oblicz</button>
+        <p id="wPlace"></p>
+        <script>
+            document.getElementById("b1").addEventListener("click",function(){
+                const ilosc = parseInt(document.getElementById("input1").value);             
+                const wynik = document.getElementById("wPlace");
+                if(isNaN(ilosc)){
+                    alert("Wpisz poprawną liczbę");
+                    wynik.textContent ="Wpisz poprawną liczbę";
+                }else if((ilosc % 2) == 0){
+                    wynik.textContent = "Liczba jest parzysta";
+                }else if((ilosc % 2) === 1){
+                    wynik.textContent = "Liczba jest nie parzysta";
+                }
+
+            })
+
+
+
+        </script>
+
+    </section>
+</body>
+</html>
