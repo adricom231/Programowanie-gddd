@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Suma</h2>
+    
+    <label for="a1">A:</label>
+    <input type="number" id="a1"><br>
+
+    <label for="b1">B:</label>
+    <input type="number" id="b1"><br>
+    <input type="radio" id="plus" name="op" value="plus">
+    <label for="plus"> +</label>
+    <input type="radio" id="minus" name="op" value="minus">
+    <label for="plus"> -</label>
+    <input type="radio" id="times" name="op" value="times">
+    <label for="plus"> *</label>
+    <input type="radio" id="div" name="op" value="div">
+    <label for="plus"> /</label><br>
+    <input type="button" id="cal1" value="Oblicz">
+    <p id="o1"></p>
+
+
+
+    <script>
+        document.getElementById("cal1").addEventListener("click",function(){
+            var a1 = parseFloat(document.getElementById("a1").value);
+            var b1 = parseFloat(document.getElementById("b1").value);
+            var selectPlus = document.getElementById('plus')
+            var selectMinus = document.getElementById('minus')
+            var selectDiv = document.getElementById('div')
+            var selectTimes = document.getElementById('times')
+            var wynik = document.getElementById('o1')
+            var w = 0.0;
+
+            if(isNaN(a1) || isNaN(b1)){
+                alert("Podaj poprawne dane");
+            }else{
+                if(selectPlus.checked){
+                w = a1+b1;
+                wynik.textContent = 'Wynik: ' +  w;
+                }
+                if(selectMinus.checked){
+                w = a1-b1;
+                wynik.textContent = 'Wynik: ' +  w;
+                }
+                if(selectTimes.checked){
+                w = a1*b1;
+                wynik.textContent = 'Wynik: ' +  w;
+                }
+                if(selectDiv.checked){
+                w = a1/b1;
+                wynik.textContent = 'Wynik: ' +  w;
+                }
+            }
+            
+
+        })
+    </script>
+</body>
+</html>
