@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    
+    <h1>Proste zadania edukacyjne</h1>
+    <h2>Zadanie 1. Czy liczba jest parzysta</h2><br>
+    <input type="number" placeholder="Podaj liczbę" id="in1">
+    <button onclick="sprParz()">Sprawdź</button>   
+    <p id="wynik1"></p>
+    <br><br>
+    
+    
+    <h2>Zadanie 2.</h2>
+    <input type="number" id="2a" placeholder="Bok A">
+    <input type="number" id="2b" placeholder="Bok B">
+    <input type="number" id="2c" placeholder="Bok C">
+    <button onclick="testTriangle()">Sprawdź</button>
+    <p id="wynik2"></p>
+
+
+    <script>
+        function sprParz(){
+            let x = parseInt(document.getElementById("in1").value)
+            let out = document.getElementById("wynik1")
+            if(isNaN(x)){
+                alert("Podaj liczbę")
+            }else{
+                if(x%2===0){
+                    out.textContent = "Liczba jest parzysta"
+                }else{
+                    out.textContent = "Liczba jest nieparzysta"
+                }
+            }
+        }
+
+        function testTriangle(){
+            let a = parseFloat(document.getElementById("2a").value)
+            let b = parseFloat(document.getElementById("2b").value)
+            let c = parseFloat(document.getElementById("2c").value)
+            let out2 = document.getElementById("wynik2")
+
+            if(isNaN(a) || isNaN(b) || isNaN(c)){
+                alert("PODAJ POPRAWNE LICZBY")
+            }else if((a+b > c) && (a + c > b) && (b+c > a)){
+                out2.textContent = "Trójkąt jest możliwy do zbudowania"
+            }else{
+                out2.textContent = "Trójkąt jest nie możliwy do zbudowania"
+
+            }
+
+        }
+
+    </script>
+
+
+
+</body>
+</html>
